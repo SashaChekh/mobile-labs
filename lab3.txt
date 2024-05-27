@@ -1,0 +1,13 @@
+fun averageNonNull(numbers: List<Int?>): Double {
+    val nonNullNumbers = numbers.filterNotNull()
+    if (nonNullNumbers.isEmpty()) return 0.0
+    return nonNullNumbers.sum() / nonNullNumbers.size.toDouble()
+}
+
+
+
+fun main(args: Array<String>) {
+    val numbers = listOf(1, 2, null, 4, 5)
+    val average = averageNonNull(numbers)
+    println("Average: $average")
+}

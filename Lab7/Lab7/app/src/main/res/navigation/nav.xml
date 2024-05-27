@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/fragment_1">
+
+    <fragment
+        android:id="@+id/fragment_1"
+        android:name="com.example.lab_7.Fragment1"
+        android:label="Fragment 1"
+        tools:layout="@layout/fragment_1">
+        <action
+            android:id="@+id/action_fragment1_to_fragment2"
+            app:destination="@id/fragment_2">
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_2"
+        android:name="com.example.lab_7.Fragment2"
+        android:label="Fragment 2"
+        tools:layout="@layout/fragment_2">
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="price"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_new"
+        android:name="com.example.lab_7.Fragment3"
+        android:label="New Fragment"
+        tools:layout="@layout/fragment_3">
+    </fragment>
+
+</navigation>

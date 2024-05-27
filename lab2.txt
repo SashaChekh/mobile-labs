@@ -1,0 +1,32 @@
+abstract class Product(val name: String, val price: Double) {
+    abstract fun calculateCost(count : Int): Double
+
+    override fun toString(): String {
+        return "Name: $name, Price: $price"
+    }
+}
+
+
+class FoodProduct(name: String, price: Double, val expirationDate: String) : Product(name, price) {
+    override fun calculateCost(count : Int): Double {
+        return price * count;
+    }
+}
+
+class HouseholdProduct(name: String, price: Double, val warrantyPeriod: Int) : Product(name, price) {
+    override fun calculateCost(count : Int): Double {
+        return price * count;
+    }
+}
+
+
+fun main(args: Array<String>) {
+    val apple = FoodProduct("apple", 1.50, "2024-05-31")
+    val chair = HouseholdProduct("chair", 50.00, 2)
+
+    println(apple)
+    println(chair)
+
+    println("Cost ${apple.name}: ${apple.calculateCost(5)}")
+    println("Cost ${chair.name}: ${chair.calculateCost(1)}")
+}
